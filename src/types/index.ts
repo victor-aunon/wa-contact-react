@@ -36,5 +36,7 @@ export type WhatsAppContactProps = {
   borderColor?: string;
   titleTextColor?: string;
   textColor?: string;
+  alignLeft?: boolean;
+  marginBottom?: string;
 };
 

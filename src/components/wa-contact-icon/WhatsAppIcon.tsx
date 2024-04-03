@@ -1,16 +1,27 @@
 import "./WhatsAppIcon.css";
 import { useWhatsAppContactContext } from "../WhatsAppContact";
 
-export function WhatsAppIcon({ ...props }: React.ComponentPropsWithRef<"svg">) {
+export function WhatsAppIcon({
+  style,
+  ...props
+}: React.ComponentPropsWithRef<"svg">) {
   const { config } = useWhatsAppContactContext();
-  const { iconSize, borderColor, fillColor } = config;
+  const { alignLeft, iconSize, borderColor, fillColor, marginBottom } = config;
+
+  const cssVars = {
+    "--wac__margin-bottom": marginBottom,
+  } as React.CSSProperties;
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 48 48"
       width={iconSize}
       height={iconSize}
-      className="wac__mini_button"
+      className={`wac__mini_button ${
+        alignLeft ? "wac__mini_button_left" : "wac__mini_button_right"
+      }`}
+      style={{ ...cssVars, ...style }}
       {...props}
     >
       <path

@@ -12,11 +12,13 @@ export function WhatsAppBox() {
   const [isToBeClosed, setIsToBeClosed] = useState(false);
 
   const {
+    alignLeft,
     businessPhone,
     businessName,
     fillColor,
     fontFamily,
     language,
+    marginBottom,
     showAlwaysPhone,
     textColor,
     timeTable,
@@ -38,7 +40,6 @@ export function WhatsAppBox() {
     if (navigator.userAgent.toLowerCase().includes("win"))
       url = `whatsapp://send/?phone=${businessPhone}`;
     else url = `https://wa.me/${businessPhone}`;
-    console.log(url);
 
     window.open(url, "_blank", "noreferrer");
   }
@@ -48,6 +49,7 @@ export function WhatsAppBox() {
     "--wac__text-color": textColor,
     "--wac__box-title-color": titleTextColor,
     "--wac__box-bg-color": fillColor,
+    "--wac__margin-bottom": marginBottom,
   } as React.CSSProperties;
 
   return (
@@ -55,7 +57,7 @@ export function WhatsAppBox() {
       style={cssVars}
       className={`wac__box ${
         isToBeClosed ? "wac__box_closed" : "wac__box_opened"
-      }`}
+      } ${alignLeft ? "wac__box_left" : "wac__box_right"}`}
     >
       <div className="wac__box_title">
         <CloseButton

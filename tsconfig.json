@@ -24,11 +24,11 @@
     "noFallthroughCasesInSwitch": true,
 
     // Aliases
+    "rootDir": "src",
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*", "dist/*", ""],
       "@components/*": ["src/components/*"],
-      "@assets/*": ["src/assets/*"],
     }
   },
   "include": ["src"],

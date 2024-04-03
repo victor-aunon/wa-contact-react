@@ -16,3 +16,25 @@
 *::after {
   box-sizing: border-box;
 }
+
+@keyframes wac__fade_in {
+  from {
+    opacity: var(--wac__fade_in-0-opacity);
+    transform: var(--wac__fade_in-0-transform);
+  }
+  to {
+    opacity: var(--wac__fade_in-100-opacity);
+    transform: var(--wac__fade_in-100-transform);
+  }
+}
+
+@keyframes wac__fade_out {
+  from {
+    opacity: var(--wac__fade_in-100-opacity);
+    transform: var(--wac__fade_in-100-transform);
+  }
+  to {
+    opacity: var(--wac__fade_in-0-opacity);
+    transform: var(--wac__fade_in-0-transform);
+  }
+}

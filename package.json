@@ -5,6 +5,9 @@
   "description": "A module to include a WhatsApp contact button to your React app",
   "author": "Víctor Angel Auñón",
   "license": "ISC",
+  "repository": {
+    "url": "git+https://github.com/victor-aunon/wa-contact-react.git"
+  },
   "scripts": {
     "rollup": "rollup -c",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
@@ -14,6 +17,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@testing-library/react": "^14.2.2",
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
@@ -28,7 +32,8 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "tslib": "^2.6.2",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vitest": "^1.4.0"
   },
   "peerDependencies": {
     "react": "^18.2.0"
