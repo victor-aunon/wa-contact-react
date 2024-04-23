@@ -5,8 +5,8 @@ type CloseButtonProps = React.ComponentPropsWithRef<"svg"> & {
 export function CloseButton({title, ...props} : CloseButtonProps) {
   return (
     <svg
-      width="800px"
-      height="800px"
+      width="2.5rem"
+      height="2.5rem"
       viewBox="2 2 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

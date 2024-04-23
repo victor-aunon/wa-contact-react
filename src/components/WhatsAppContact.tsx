@@ -4,7 +4,7 @@ import { WhatsAppBox } from "./wa-contact-box";
 import { config } from "@/config";
 import { translations } from "@/translation";
 import type { WhatsAppContactProps } from "../types";
-import "./index.css"
+import "./index.css";
 
 type WhatsAppContactContextType = {
   isOpen: boolean;
@@ -26,6 +26,7 @@ export function WhatsAppContact({
   alignLeft = config.alignLeft,
   borderColor = config.borderColor,
   fillColor = config.fillColor,
+  iconFillColor = config.iconFillColor,
   fontFamily = config.fontFamily,
   iconSize = config.iconSize,
   marginBottom = config.marginBottom,
@@ -44,6 +45,7 @@ export function WhatsAppContact({
     alignLeft,
     borderColor,
     fillColor,
+    iconFillColor,
     fontFamily,
     iconSize,
     marginBottom,
@@ -59,7 +61,10 @@ export function WhatsAppContact({
       {isOpen ? (
         <WhatsAppBox />
       ) : (
-        <WhatsAppIcon onClick={() => setIsOpen(true)} />
+        <WhatsAppIcon
+          onClick={() => setIsOpen(true)}
+          title={translations[language].openButtonAlt}
+        />
       )}
     </WhatsAppContactContext.Provider>
   );

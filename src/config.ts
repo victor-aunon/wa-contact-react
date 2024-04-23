@@ -4,7 +4,8 @@ import type { WhatsAppContactProps } from "./types";
 export const config: Partial<WhatsAppContactProps> = {
   alignLeft: false,
   borderColor: '#FFFFFF',
-  fillColor: '#40C351',
+  iconFillColor: '#40C351',
+  fillColor: '#037d68',
   fontFamily: 'system-ui, Helvetica, Arial, sans-serif;',
   iconSize: '60px',
   marginBottom: '1rem',

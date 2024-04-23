@@ -1,11 +1,12 @@
-import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
-import postcss from "rollup-plugin-postcss";
-import packageJson from "./package.json" assert { type: "json" };
-import terser from "@rollup/plugin-terser";
+import image from '@rollup/plugin-image';
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import postcss from "rollup-plugin-postcss";
+import resolve from "@rollup/plugin-node-resolve";
+import terser from "@rollup/plugin-terser";
+import typescript from "@rollup/plugin-typescript";
+import packageJson from "./package.json" assert { type: "json" };
 
 export default [
   {
@@ -26,6 +27,7 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
+      image(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss(),
       terser(),
@@ -35,6 +37,6 @@ export default [
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
-    external: [/\.css$/],
+    external: [/\.css$/, /\.png$/],
   },
 ];

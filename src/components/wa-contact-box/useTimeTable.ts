@@ -21,7 +21,7 @@ export function useTimeTable() {
   }
 
   function isOpenNow(timeTable: WhatsAppContactProps["timeTable"]) {
-    if (!isOpenToday(timeTable)) return false;
+    if (!isOpenToday(timeTable)) return false;  // TODO: check hour first
 
     const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const userDate = new Date(

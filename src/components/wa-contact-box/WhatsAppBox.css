@@ -2,6 +2,7 @@
   width: 90%;
   max-width: 350px;
   position: fixed;
+  min-height: 10rem;
   bottom: var(--wac__margin-bottom);
   display: flex;
   flex-direction: column;
@@ -34,11 +35,13 @@
 .wac__close_button {
   height: 2rem;
   width: 2rem;
+  flex-shrink: 0;
   aspect-ratio: 1;
   border: 2px solid black;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.1s ease-in-out;
+  background-color: var(--wac__box-icon-bg-color);
 
   &:hover {
     scale: 1.15;
@@ -57,12 +60,16 @@
 .wac__box_title_text {
   font-size: 1.2rem;
   font-weight: 600;
+  flex-grow: 1;
 }
 
 .wac__box_body {
   background-color: white;
   padding: 0.5rem 1rem;
-
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-grow: 1;
+ 
   [class~="wac__not_available"] {
     display: flex;
     flex-direction: column;

@@ -33,6 +33,7 @@ export type WhatsAppContactProps = {
   fontFamily?: string;
   iconSize?: string;
   fillColor?: string;
+  iconFillColor?: string;
   borderColor?: string;
   titleTextColor?: string;
   textColor?: string;

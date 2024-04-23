@@ -1,8 +1,14 @@
 {
   "name": "@victor-aunon/wa-contact-react",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A module to include a WhatsApp contact button to your React app",
+  "keywords": [
+    "react",
+    "whatsapp",
+    "business",
+    "typescript"
+  ],
   "author": "Víctor Angel Auñón",
   "license": "ISC",
   "repository": {
@@ -10,19 +16,23 @@
   },
   "scripts": {
     "rollup": "rollup -c",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "test": "vitest run"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-image": "^3.0.3",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.2",
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
+    "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.56.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
