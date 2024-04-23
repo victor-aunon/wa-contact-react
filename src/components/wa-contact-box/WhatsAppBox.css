@@ -11,13 +11,13 @@
   border: 2px solid color-mix(in srgb, var(--wac__box-bg-color) 70%, black);
   background-color: var(--wac__box-bg-color);
   overflow: hidden;
-  
+
   &.wac__box_left {
     left: 1rem;
     border-radius: 0 20px 20px 20px;
     --wac__fade_in-0-transform: translateX(-200px);
   }
-  
+
   &.wac__box_right {
     right: 1rem;
     border-radius: 20px 0 20px 20px;
@@ -52,9 +52,25 @@
 .wac__box_title {
   color: var(--wac__box-title-color);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
-  padding: 0.5rem;
+  padding: 0.75rem;
+}
+
+.wac__box_title_image {
+  border-radius: 50%;
+  height: 2.5rem;
+  aspect-ratio: 1;
+  object-fit: contain;
+  flex-shrink: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--wac__box-title-color);
+  background-color: var(--wac__box-icon-bg-color);
+  text-transform: uppercase;
+  outline: 2px solid var(--wac__box-title-color);
+  display: grid;
+  place-items: center;
 }
 
 .wac__box_title_text {
@@ -69,7 +85,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   flex-grow: 1;
- 
+
   [class~="wac__not_available"] {
     display: flex;
     flex-direction: column;
@@ -99,5 +115,28 @@
       width: 2.5rem;
       height: 2.5rem;
     }
+  }
+}
+
+.wac__box_body_dialog {
+  width: fit-content;
+  max-width: 90%;
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border-radius: 0px 10px 10px 10px;
+  margin-bottom: 2rem;
+  margin-left: 5px;
+  position: relative;
+  filter: drop-shadow(0 0 3px #888);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0 -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 15px solid white;
   }
 }

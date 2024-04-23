@@ -17,6 +17,18 @@
   box-sizing: border-box;
 }
 
+@keyframes wac__pulse {
+  0% {
+    filter: drop-shadow(0 0 0 var(--wac__fill-color));
+  }
+  50% {
+    filter: drop-shadow(0 0 0.5rem var(--wac__fill-color));
+  }
+  100% {
+    filter: drop-shadow(0 0 0 var(--wac__fill-color));
+  }
+}
+
 @keyframes wac__fade_in {
   from {
     opacity: var(--wac__fade_in-0-opacity);

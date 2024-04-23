@@ -19,6 +19,7 @@ const WhatsAppContactContext = createContext<WhatsAppContactContextType | null>(
 export function WhatsAppContact({
   businessName,
   businessPhone,
+  businessImage,
   timeTable,
   language,
   availableText = translations[language].available,
@@ -38,6 +39,7 @@ export function WhatsAppContact({
   const contextConfig = {
     businessName,
     businessPhone,
+    businessImage,
     timeTable,
     language,
     availableText,

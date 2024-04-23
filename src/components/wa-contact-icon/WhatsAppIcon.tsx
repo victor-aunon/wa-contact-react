@@ -12,6 +12,7 @@ export function WhatsAppIcon({ style, title, ...props }: WhatsAppIconProps) {
 
   const cssVars = {
     "--wac__margin-bottom": marginBottom,
+    "--wac__fill-color": iconFillColor,
   } as React.CSSProperties;
 
   return (

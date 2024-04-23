@@ -27,6 +27,7 @@ export type WhatsAppContactProps = {
   businessPhone: string;
   timeTable: SpecificDays | BusinessDays | EveryDay;
   language: "es-ES" | "en-US";
+  businessImage?: string;
   availableText?: string;
   notAvailableText?: string;
   showAlwaysPhone?: boolean;

@@ -5,7 +5,7 @@ import { translations } from "@/translation";
 import { CloseButton } from "./CloseButton";
 import { WhatsAppIcon } from "../wa-contact-icon";
 import "./WhatsAppBox.css";
-import boxBg from "../../assets/background.png"
+import boxBg from "../../assets/background.png";
 
 export function WhatsAppBox() {
   const { isOpenNow, getTimeTableString } = useTimeTable();
@@ -16,6 +16,7 @@ export function WhatsAppBox() {
     alignLeft,
     businessPhone,
     businessName,
+    businessImage,
     fillColor,
     fontFamily,
     iconFillColor,
@@ -63,31 +64,45 @@ export function WhatsAppBox() {
       } ${alignLeft ? "wac__box_left" : "wac__box_right"}`}
     >
       <div className="wac__box_title">
-        <p className="wac__box_title_text" data-testid="wac-title">{businessName}</p>
+        <img
+          className="wac__box_title_image"
+          src={businessImage}
+          alt={businessName[0]}
+        />
+        <p className="wac__box_title_text" data-testid="wac-title">
+          {businessName}
+        </p>
         <CloseButton
           title={translations[language].closeButtonAlt}
           className="wac__close_button"
           onClick={handleBoxClose}
         />
       </div>
-      <div className="wac__box_body" data-testid="wac-body" style={{backgroundImage: `url(${boxBg})`}}>
-        {isOpenNow(timeTable) ? (
-          <p className="phone" onClick={openWhatsApp}>
-            <WhatsAppIcon className="icon" />
-            {businessName}
-          </p>
-        ) : (
-          <div className="wac__not_available">
-            <p>{timeTableTitle}</p>
-            <p dangerouslySetInnerHTML={{ __html: timeTableSubtitle }} />
-            {showAlwaysPhone && (
-              <p className="phone" onClick={openWhatsApp}>
-                <WhatsAppIcon className="icon" />
-                {businessName}
-              </p>
-            )}
-          </div>
-        )}
+      <div
+        className="wac__box_body"
+        data-testid="wac-body"
+        style={{ backgroundImage: `url(${boxBg})` }}
+      >
+        <div className="wac__box_body_dialog">
+          {isOpenNow(timeTable) ? (
+            <p className="phone" onClick={openWhatsApp}>
+              <WhatsAppIcon className="icon" />
+              {businessName}
+            </p>
+          ) : (
+            <div className="wac__not_available">
+              <p><strong>{title}</strong></p>
+              <p>{timeTableTitle}</p>
+              <p dangerouslySetInnerHTML={{ __html: timeTableSubtitle }} />
+              {showAlwaysPhone && (
+                <p className="phone" onClick={openWhatsApp}>
+                  <WhatsAppIcon className="icon" />
+                  {businessName}
+                </p>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

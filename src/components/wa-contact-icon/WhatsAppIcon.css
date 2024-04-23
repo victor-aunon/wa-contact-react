@@ -3,7 +3,10 @@
   bottom: var(--wac__margin-bottom);
   cursor: pointer;
   transition: scale 0.1s ease-in-out;
-  animation: wac__fade_in 0.5s ease-in-out forwards;
+  animation: 
+    wac__fade_in 0.5s ease-in-out forwards,
+    2s ease-in-out wac__pulse 2s infinite;
+
 
   &:hover {
     scale: 1.1;
